@@ -1,0 +1,21 @@
+## aws-cli things
+#
+export AWS_DEFAULT_REGION=ap-southeast-2
+export AWS_ACCESS_KEY_ID=********************
+export AWS_SECRET_ACCESS_KEY=****************************************
+export AWS_REGION=ap-southeast-2
+
+## bbl things
+#
+export BBL_ENV_NAME='mybosh'
+export BBL_IAAS=aws
+export BBL_AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID"
+export BBL_AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY"
+export BBL_AWS_REGION="$AWS_REGION"
+
+## bosh director things
+#
+if [[ -e 'bbl-state.json' ]]
+then
+  eval "$(bbl print-env)"
+fi
