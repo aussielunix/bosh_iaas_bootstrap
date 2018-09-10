@@ -5,15 +5,17 @@ bosh create-env \
   --state  ${BBL_STATE_DIR}/vars/bosh-state.json \
   --vars-store  ${BBL_STATE_DIR}/vars/director-vars-store.yml \
   --vars-file  ${BBL_STATE_DIR}/vars/director-vars-file.yml \
-  -o  ${BBL_STATE_DIR}/bosh-deployment/aws/cpi.yml \
-  -o  ${BBL_STATE_DIR}/bosh-deployment/aws/s3-blobstore.yml \
-  -o  ${BBL_STATE_DIR}/bosh-deployment/aws/encrypted-disk.yml \
-  -o  ${BBL_STATE_DIR}/bosh-deployment/aws/iam-instance-profile.yml \
-  -o  ${BBL_STATE_DIR}/bosh-deployment/jumpbox-user.yml \
-  -o  ${BBL_STATE_DIR}/bosh-deployment/uaa.yml \
-  -o  ${BBL_STATE_DIR}/bosh-deployment/credhub.yml \
-  -o  ${BBL_STATE_DIR}/bbl-ops-files/aws/bosh-director-ephemeral-ip-ops.yml \
-  -v  access_key_id="${BBL_AWS_ACCESS_KEY_ID}" \
-  -v  secret_access_key="${BBL_AWS_SECRET_ACCESS_KEY}" \
-  -v  s3-bucket-name="aussielunix-director-blobstore" \
-  -v  s3-region="ap-southeast-2"
+  -o ${BBL_STATE_DIR}/bosh-deployment/aws/cpi.yml \
+  -o ${BBL_STATE_DIR}/bosh-deployment/aws/s3-blobstore.yml \
+  -o ${BBL_STATE_DIR}/bosh-deployment/aws/encrypted-disk.yml \
+  -o ${BBL_STATE_DIR}/bosh-deployment/aws/iam-instance-profile.yml \
+  -o ${BBL_STATE_DIR}/bosh-deployment/jumpbox-user.yml \
+  -o ${BBL_STATE_DIR}/bosh-deployment/uaa.yml \
+  -o ${BBL_STATE_DIR}/bosh-deployment/credhub.yml \
+  -o ${BBL_STATE_DIR}/bbl-ops-files/aws/bosh-director-ephemeral-ip-ops.yml \
+  -v access_key_id="${BBL_AWS_ACCESS_KEY_ID}" \
+  -v secret_access_key="${BBL_AWS_SECRET_ACCESS_KEY}" \
+  -v s3-access-key-id="${BBL_AWS_ACCESS_KEY_ID}" \
+  -v s3-secret-access-key="${BBL_AWS_SECRET_ACCESS_KEY}" \
+  -v s3-bucket-name="aussielunix-director-blobstore" \
+  -v s3-region="ap-southeast-2"
