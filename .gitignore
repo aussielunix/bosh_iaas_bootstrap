@@ -1,1 +1,11 @@
 .envrc
+bbl-ops-files/
+bosh-deployment/
+create-director.sh
+create-jumpbox.sh
+delete-director.sh
+delete-jumpbox.sh
+dl.sh
+jumpbox-deployment/
+login.sh
+terraform/
