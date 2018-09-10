@@ -17,5 +17,5 @@ bosh create-env \
   -v secret_access_key="${BBL_AWS_SECRET_ACCESS_KEY}" \
   -v s3-access-key-id="${BBL_AWS_ACCESS_KEY_ID}" \
   -v s3-secret-access-key="${BBL_AWS_SECRET_ACCESS_KEY}" \
-  -v s3-bucket-name="aussielunix-director-blobstore" \
+  -v s3-bucket-name="${BBL_ENV_NAME}-blobstore" \
   -v s3-region="ap-southeast-2"
