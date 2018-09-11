@@ -8,8 +8,8 @@ cd aws_bosh_bootstrap
 cp .envrc.example .envrc
 source .envrc
 bbl up
-source .envrc
-bosh env 
+eval "$(bbl print-env)"
+bosh env
 ```
 
 ## Instructions
