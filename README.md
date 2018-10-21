@@ -1,5 +1,9 @@
 # Bootstrap BOSH Director on various IaaS
 
+These are opinionated starting points for using [bbl](https://github.com/cloudfoundry/bosh-bootloader/) to standup a BOSH Director.
+
+See my [documentation](https://bosh.valueline.io/bootstrap-bosh-director/) on using these starting points.
+
 ## TL;DR
 
 ```
