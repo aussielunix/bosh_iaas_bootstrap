@@ -17,7 +17,7 @@ export BBL_ENV_NAME='exa-256afd0e'
 ## GCP
 #export BBL_IAAS=gcp
 #export BBL_GCP_REGION=
-#export BBL_GCP_SERVICE_ACCOUNT_KEY=
+#export BBL_GCP_SERVICE_ACCOUNT_KEY=~/.config/gcloud/bbl-up-demo.key.json)"
 
 
 ## Nothing to edit below here ##
