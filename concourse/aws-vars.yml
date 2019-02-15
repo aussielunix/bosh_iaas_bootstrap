@@ -1,8 +1,5 @@
 ---
 
-local_user:
-  username: "mpadmin"
-  password: "testPivotal"
 network_name: 'private'
 web_instances: 2
 web_network_name: 'private'

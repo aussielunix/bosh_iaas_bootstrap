@@ -7,6 +7,9 @@ An example of deploying Concourse is included.
 
 This is intended to be an extremely fast way of getting a BOSH and Concourse and not for production use.
 
+*Note:* Credhub namespaces credentials the following way: /bosh director
+name/bosh dpeloyment name/credential name.
+
 ## TL;DR
 
 **This assumes you have bbl, terraform, git, bosh & direnv already installed**
@@ -22,6 +25,10 @@ direnv allow
 bosh env
 bosh upload-stemcell "${STEMCELL_URL}"
 
+# Generate some basic auth creds in CredHub
+credhub generate --type user --username admin --name /boshdirector/deploymentname/local_user
+
+
 git clone git@github.com:concourse/concourse-bosh-deployment.git
 
 bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml      \
@@ -34,6 +41,9 @@ bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml      \
   -o concourse-bosh-deployment/cluster/operations/credhub.yml                 \
   -o concourse-bosh-deployment/cluster/operations/worker-ephemeral-disk.yml
 
-```
+credhub get -n /boshdirector/deploymentname/local_user
 
-:todo: use credhub for basic auth creds
+open "$external_url"
+fly -t mylab login --concourse-url "$external_url"
+
+```
