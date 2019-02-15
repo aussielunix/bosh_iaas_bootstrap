@@ -23,23 +23,11 @@ bbl up --lb-type=concourse
 direnv allow
 bosh env
 bosh upload-stemcell "${STEMCELL_URL}"
-
+git clone git@github.com:concourse/concourse-bosh-deployment.git
 # Generate some basic auth creds in CredHub
 credhub generate --type user --username admin --name /boshdirector/deploymentname/local_user
-
-
-git clone git@github.com:concourse/concourse-bosh-deployment.git
-
-bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml      \
-  -l concourse-bosh-deployment/versions.yml                                   \
-  -l concourse/aws-vars.yml                                                   \
-  -o concourse-bosh-deployment/cluster/operations/basic-auth.yml              \
-  -o concourse-bosh-deployment/cluster/operations/privileged-http.yml         \
-  -o concourse-bosh-deployment/cluster/operations/web-network-extension.yml   \
-  -o concourse-bosh-deployment/cluster/operations/scale.yml                   \
-  -o concourse-bosh-deployment/cluster/operations/credhub.yml                 \
-  -o concourse-bosh-deployment/cluster/operations/worker-ephemeral-disk.yml
-
+./prepare-concourse-deploy.sh*
+./deploy-concourse-cluster.sh
 credhub get -n /boshdirector/deploymentname/local_user
 
 open "$external_url"
