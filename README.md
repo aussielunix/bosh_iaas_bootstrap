@@ -22,7 +22,6 @@ direnv allow
 bbl up --lb-type=concourse
 direnv allow
 bosh env
-bosh upload-stemcell "${STEMCELL_URL}"
 git clone git@github.com:concourse/concourse-bosh-deployment.git
 # Generate some basic auth creds in CredHub
 bbl outputs | grep director_name
