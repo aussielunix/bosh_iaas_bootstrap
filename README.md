@@ -2,27 +2,27 @@
 
 The aim of this repo is to give you a BOSH director and Concourse in the IaaS of your choice.
 These are opinionated starting points for using [bbl](https://github.com/cloudfoundry/bosh-bootloader/) to standup a BOSH Director.  
-This direcxtor can theen be used to do BOSH deployments to.  
+This director is then ready for bosh deployments.   
 An example of deploying Concourse is included.  
 
 This is intended to be an extremely fast way of getting a BOSH and Concourse and not for production use.
 
 ## TL;DR
 
-**This assumes you have bbl, terraform, git & direnv already installed**
+**This assumes you have bbl, terraform, git, bosh & direnv already installed**
 
 ```
 git clone git@github.com:aussielunix/bosh_iaas_bootstrap.git
 cd bosh_iaas_bootstrap
-cp aws/.envrc.example .envrc # or other IaaS specific dir
+cp .envrc.example .envrc
 # tune .envrc
 direnv allow
 bbl up --lb-type=concourse
 direnv allow
 bosh env
+bosh upload-stemcell "${STEMCELL_URL}"
 
 git clone git@github.com:concourse/concourse-bosh-deployment.git
-bosh upload-stemcell "${STEMCELL_URL}"
 
 bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml      \
   -l concourse-bosh-deployment/versions.yml                                   \
