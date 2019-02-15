@@ -26,7 +26,7 @@ bosh upload-stemcell "${STEMCELL_URL}"
 git clone git@github.com:concourse/concourse-bosh-deployment.git
 # Generate some basic auth creds in CredHub
 credhub generate --type user --username admin --name /boshdirector/deploymentname/local_user
-./prepare-concourse-deploy.sh*
+./prepare-concourse-deploy.sh
 ./deploy-concourse-cluster.sh
 credhub get -n /boshdirector/deploymentname/local_user
 

@@ -7,11 +7,18 @@ PROJECT_ROOT="/Users/example/bosh_iaas_bootstrap"
 # ENV_NAME needs to be globally unique (for S3)
 #
 export BBL_ENV_NAME='exa-256afd0e'
-export BBL_IAAS=aws
 
-export BBL_AWS_ACCESS_KEY_ID="examplexxxxx"
-export BBL_AWS_SECRET_ACCESS_KEY="examplexxxxxxxxxxxxxxxxxxxxxxx"
-export BBL_AWS_REGION="us-west-1"
+## AWS
+#export BBL_IAAS=aws
+#export BBL_AWS_ACCESS_KEY_ID="examplexxxxx"
+#export BBL_AWS_SECRET_ACCESS_KEY="examplexxxxxxxxxxxxxxxxxxxxxxx"
+#export BBL_AWS_REGION="us-west-1"
+
+## GCP
+#export BBL_IAAS=gcp
+#export BBL_GCP_REGION=
+#export BBL_GCP_SERVICE_ACCOUNT_KEY=
+
 
 ## Nothing to edit below here ##
 #
