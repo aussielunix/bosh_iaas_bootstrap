@@ -12,3 +12,6 @@ bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml      \
   -o concourse-bosh-deployment/cluster/operations/scale.yml                   \
   -o concourse-bosh-deployment/cluster/operations/credhub.yml                 \
   -o concourse-bosh-deployment/cluster/operations/worker-ephemeral-disk.yml
+
+concourseurl="$(egrep "^external_url" concourse/settings.yml | sed 's/.*"\(.*\)"[^"]*$/\1/')"
+echo "Concourse URL: $concourseurl"
