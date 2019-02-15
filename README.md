@@ -33,4 +33,8 @@ credhub get -n /boshdirector/deploymentname/local_user
 open "$external_url"
 fly -t mylab login --concourse-url "$external_url"
 
+# remember to frequently rotate Concourse's basic auth credentials
+credhub regenerate --name /boshdirectorsname/controlplane/atc_basic_auth
+./deploy-concourse-cluster.sh
+
 ```
