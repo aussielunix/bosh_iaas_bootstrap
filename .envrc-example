@@ -1,0 +1,35 @@
+## Project root directory
+#
+PROJECT_ROOT="/Users/example/bosh_iaas_bootstrap"
+
+## bbl things
+# ENV_NAME needs to be short
+# ENV_NAME needs to be globally unique (for S3)
+#
+export BBL_ENV_NAME='exa-256afd0e'
+export BBL_IAAS=aws
+
+export BBL_AWS_ACCESS_KEY_ID="examplexxxxx"
+export BBL_AWS_SECRET_ACCESS_KEY="examplexxxxxxxxxxxxxxxxxxxxxxx"
+export BBL_AWS_REGION="us-west-1"
+
+## Nothing to edit below here ##
+#
+export BBL_STATE_DIRECTORY="$PROJECT_ROOT/$BBL_IAAS"
+## bosh director things
+#
+if [[ -e "$BBL_STATE_DIRECTORY/bbl-state.json" ]]
+then
+  eval "$(bbl print-env)"
+
+  if [ "${BBL_IAAS}" = "aws" ]; then
+    export EXTERNAL_HOST="$(bbl outputs | grep concourse_lb_url | cut -d ' ' -f2)"
+    export STEMCELL_URL="https://bosh.io/d/stemcells/bosh-aws-xen-hvm-ubuntu-xenial-go_agent"
+  elif [ "${BBL_IAAS}" = "gcp" ]; then
+    export EXTERNAL_HOST="$(bbl outputs | grep concourse_lb_ip | cut -d ' ' -f2)"
+    export STEMCELL_URL="https://bosh.io/d/stemcells/bosh-google-kvm-ubuntu-xenial-go_agent"
+  else # Azure
+    export EXTERNAL_HOST="$(bbl outputs | grep concourse_lb_ip | cut -d ' ' -f2)"
+    export STEMCELL_URL="https://bosh.io/d/stemcells/bosh-azure-hyperv-ubuntu-xenial-go_agent"
+  fi
+fi

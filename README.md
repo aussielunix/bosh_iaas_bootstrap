@@ -22,15 +22,17 @@ direnv allow
 bosh env
 
 git clone git@github.com:concourse/concourse-bosh-deployment.git
+bosh upload-stemcell "${STEMCELL_URL}"
 
-bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml			\
-	-l concourse-bosh-deployment/versions.yml 																	\
-	-l concourse/aws-vars.yml																										\
-	-o concourse-bosh-deployment/cluster/operations/basic-auth.yml							\
-	-o concourse-bosh-deployment/cluster/operations/privileged-http.yml					\
-	-o concourse-bosh-deployment/cluster/operations/web-network-extension.yml		\
-	-o concourse-bosh-deployment/cluster/operations/scale.yml										\
-	-o concourse-bosh-deployment/cluster/operations/worker-ephemeral-disk.yml
+bosh deploy -d concourse concourse-bosh-deployment/cluster/concourse.yml      \
+  -l concourse-bosh-deployment/versions.yml                                   \
+  -l concourse/aws-vars.yml                                                   \
+  -o concourse-bosh-deployment/cluster/operations/basic-auth.yml              \
+  -o concourse-bosh-deployment/cluster/operations/privileged-http.yml         \
+  -o concourse-bosh-deployment/cluster/operations/web-network-extension.yml   \
+  -o concourse-bosh-deployment/cluster/operations/scale.yml                   \
+  -o concourse-bosh-deployment/cluster/operations/credhub.yml                 \
+  -o concourse-bosh-deployment/cluster/operations/worker-ephemeral-disk.yml
 
 ```
 

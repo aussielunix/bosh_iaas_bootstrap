@@ -1,6 +1,5 @@
 ---
 
-external_url: "http://$EXTERNAL_HOST"
 local_user:
   username: "mpadmin"
   password: "testPivotal"

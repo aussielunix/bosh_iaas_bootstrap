@@ -1,3 +1,4 @@
+concourse/settings.yml
 concourse-bosh-deployment/
 .envrc
 **/bbl-ops-files/
@@ -22,4 +23,5 @@ concourse-bosh-deployment/
 **/vars/bosh-state.json
 **/vars/director-vars-file.yml
 **/vars/director-vars-store.yml
+**/vars/cloud-config-vars.yml
 
