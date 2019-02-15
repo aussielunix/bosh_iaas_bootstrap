@@ -19,3 +19,7 @@ concourse-bosh-deployment/
 **/vars/jumpbox-state.json
 **/vars/jumpbox-vars-file.yml
 **/vars/jumpbox-vars-store.yml
+**/vars/bosh-state.json
+**/vars/director-vars-file.yml
+**/vars/director-vars-store.yml
+
