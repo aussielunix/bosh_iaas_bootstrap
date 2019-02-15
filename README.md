@@ -14,7 +14,7 @@ This is intended to be an extremely fast way of getting a BOSH and Concourse and
 ```
 git clone git@github.com:aussielunix/bosh_iaas_bootstrap.git
 cd bosh_iaas_bootstrap
-cp .envrc.example .envrc
+cp .envrc-example .envrc
 # tune .envrc
 direnv allow
 bbl up --lb-type=concourse
