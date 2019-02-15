@@ -19,6 +19,13 @@ export BBL_ENV_NAME='exa-256afd0e'
 #export BBL_GCP_REGION=
 #export BBL_GCP_SERVICE_ACCOUNT_KEY="$(cat ~/.config/gcloud/bbl-up-demo.key.json)"
 
+## Azure
+#export BBL_IAAS=azure
+#export BBL_AZURE_CLIENT_ID="examplexxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+#export BBL_AZURE_CLIENT_SECRET="examplexxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+#export BBL_AZURE_REGION="westus"
+#export BBL_AZURE_SUBSCRIPTION_ID="examplexxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+#export BBL_AZURE_TENANT_ID="examplexxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 ## Nothing to edit below here ##
 #
