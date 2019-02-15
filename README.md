@@ -7,8 +7,7 @@ An example of deploying Concourse is included.
 
 This is intended to be an extremely fast way of getting a BOSH and Concourse and not for production use.
 
-*Note:* Credhub namespaces credentials the following way: /bosh director
-name/bosh dpeloyment name/credential name.
+*Note:* Credhub namespaces credentials the following way: `/bosh director name/bosh dpeloyment name/credential name.`
 
 ## TL;DR
 
