@@ -29,9 +29,9 @@ credhub generate --type user --username admin --name /boshdirector/deploymentnam
 ./prepare-concourse-deploy.sh
 ./deploy-concourse-cluster.sh
 credhub get -n /boshdirector/deploymentname/local_user
-
-open "$external_url"
-fly -t mylab login --concourse-url "$external_url"
+# open your external_url in a browser and login
+# or login with fly
+fly -t mylab login --concourse-url "external_url"
 
 # remember to frequently rotate Concourse's basic auth credentials
 credhub regenerate --name /boshdirector/deploymentname/local_user
